@@ -1,0 +1,42 @@
+.login-bg {
+  --background: #f4f5f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  max-width: 420px;
+  margin: 40px auto;
+}
+
+.header-section {
+  margin-bottom: 20px;
+
+  .logo-icon {
+    font-size: 64px;
+    color: var(--ion-color-primary);
+  }
+
+  h2 {
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #222;
+  }
+
+  p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+  }
+}
+
+.login-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.submit-btn {
+  margin-top: 25px;
+  font-weight: 600;
+}

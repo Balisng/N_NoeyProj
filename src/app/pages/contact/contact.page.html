@@ -1,0 +1,56 @@
+<ion-header>
+  <div style="background-color: #3880ff; padding: 12px 20px; display: flex; align-items: center; gap: 15px; color: #fff;">
+    <button type="button" (click)="goBack()" style="background: rgba(255,255,255,0.2); border: 1px solid #fff; color: #fff; padding: 6px 14px; border-radius: 6px; font-weight: bold; cursor: pointer;">
+      ⬅ กลับหน้าหลัก
+    </button>
+    <div style="font-size: 18px; font-weight: bold;">หน้าติดต่อเรา (Contact Us)</div>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" style="--background: #f8f9fa;">
+  <div style="max-width: 650px; margin: 20px auto; background: #ffffff; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);">
+    <div style="text-align: center; margin-bottom: 24px;">
+      <h2 style="font-weight: bold; margin: 0 0 6px; color: #222;">ร้านขายอาหารสัตว์ Pet Food Store</h2>
+      <p style="color: #666; margin: 0;">ติดต่อสอบถามข้อมูลสินค้าและบริการ</p>
+    </div>
+
+    <div style="margin-bottom: 24px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="background: #f0f4f9; padding: 12px; border-radius: 8px;">
+        <strong>📍 ที่อยู่ร้าน:</strong>
+        <p style="margin: 4px 0 0; color: #555;">123 ถนนเพ็ทช็อป แขวงปทุมวัน เขตปทุมวัน กรุงเทพฯ 10330</p>
+      </div>
+
+      <div style="background: #f0f4f9; padding: 12px; border-radius: 8px;">
+        <strong>📞 เบอร์โทรศัพท์:</strong>
+        <p style="margin: 4px 0 0; color: #555;">02-123-4567, 089-999-9999</p>
+      </div>
+
+      <div style="background: #f0f4f9; padding: 12px; border-radius: 8px;">
+        <strong>✉ อีเมล:</strong>
+        <p style="margin: 4px 0 0; color: #555;">contact@petfoodstore.com</p>
+      </div>
+
+      <div style="background: #f0f4f9; padding: 12px; border-radius: 8px;">
+        <strong>🕒 เวลาทำการ:</strong>
+        <p style="margin: 4px 0 0; color: #555;">เปิดให้บริการทุกวัน: 09:00 น. - 20:00 น.</p>
+      </div>
+    </div>
+
+    <div style="border-top: 1px solid #eee; padding-top: 16px;">
+      <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px; color: #333;">ส่งข้อความถึงร้านค้า</h3>
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 14px; color: #555; display: block; margin-bottom: 4px;">ชื่อของคุณ:</label>
+        <input type="text" [(ngModel)]="contactForm.name" placeholder="กรอกชื่อของคุณ" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; background: #fff; color: #000;" />
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 14px; color: #555; display: block; margin-bottom: 4px;">ข้อความ / คำถาม:</label>
+        <textarea [(ngModel)]="contactForm.message" rows="3" placeholder="กรอกข้อความที่ต้องการติดต่อ" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; background: #fff; color: #000;"></textarea>
+      </div>
+
+      <button type="button" (click)="sendMessage()" style="width: 100%; padding: 12px; background: #3880ff; color: #ffffff; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer;">
+        ✉ ส่งข้อความ
+      </button>
+    </div>
+  </div>
+</ion-content>

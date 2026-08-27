@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>เข้าสู่ระบบร้านขายอาหารสัตว์</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding login-bg">
+  <div class="login-container">
+    <div class="header-section ion-text-center">
+      <ion-icon name="paw" class="logo-icon"></ion-icon>
+      <h2>Pet Food Store</h2>
+      <p>ระบบร้านค้าออนไลน์สำหรับสัตว์เลี้ยง</p>
+    </div>
+
+    <ion-card class="login-card">
+      <ion-card-content>
+        <form (ngSubmit)="onLogin()">
+          <ion-item lines="full">
+            <ion-label position="stacked">ชื่อผู้ใช้งาน (ID)</ion-label>
+            <ion-input 
+              type="text" 
+              [value]="credentials.username" 
+              (ionInput)="onUsernameInput($event)"
+              placeholder="กรอกชื่อผู้ใช้ (admin)">
+            </ion-input>
+          </ion-item>
+
+          <ion-item lines="full" class="ion-margin-top">
+            <ion-label position="stacked">รหัสผ่าน (Password)</ion-label>
+            <ion-input 
+              type="password" 
+              [value]="credentials.password" 
+              (ionInput)="onPasswordInput($event)"
+              placeholder="กรอกรหัสผ่าน (1234)">
+            </ion-input>
+          </ion-item>
+
+          <ion-button expand="block" type="submit" class="ion-margin-top submit-btn">
+            เข้าสู่ระบบ
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="paw"></ion-icon> ร้านขายอาหารสัตว์
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" fill="outline" color="light" class="logout-btn">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        ออกจากระบบ
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-area">
+  <div class="user-banner" *ngIf="currentUser">
+    <span>ผู้ใช้งานปัจจุบัน: <strong>{{ currentUser.username }}</strong></span>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-box">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>กำลังโหลดข้อมูลสินค้า...</p>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="3" *ngFor="let item of products">
+        <ion-card class="pet-card">
+          <img [src]="item.image_url" [alt]="item.name" class="pet-img" />
+          <ion-card-header>
+            <ion-badge color="warning">{{ item.category }}</ion-badge>
+            <ion-card-title class="card-name">{{ item.name }}</ion-card-title>
+            <ion-card-subtitle class="card-price">{{ item.price | number:'1.2-2' }} บาท</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="card-desc">{{ item.description }}</p>
+            <ion-button expand="block" color="success" class="order-btn" (click)="buyProduct(item)">
+              <ion-icon name="cart-outline" slot="start"></ion-icon>
+              สั่งซื้อสินค้า
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
