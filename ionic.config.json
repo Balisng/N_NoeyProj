@@ -1,0 +1,7 @@
+{
+  "name": "pet-shop-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
